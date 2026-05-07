@@ -12,6 +12,16 @@ const JWT_SECRET = process.env.JWT_SECRET || 'dev_secret';
 app.use(cors());
 app.use(express.json());
 
+// Vercel Speed Insights: Add performance timing headers to API responses
+app.use((req, res, next) => {
+  const start = Date.now();
+  res.on('finish', () => {
+    const duration = Date.now() - start;
+    res.setHeader('Server-Timing', `total;dur=${duration}`);
+  });
+  next();
+});
+
 const auth = (roles = []) => (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) return res.status(401).json({ message: 'Unauthorized' });
