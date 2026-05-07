@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KidsCorner | Boys & Girls Clothing (0-14)</title>
+  <meta name="description" content="Shop premium kids clothing for boys and girls age 0 to 14. Easy checkout with card, Easypaisa and JazzCash." />
+  <link rel="canonical" href="https://yourdomain.com/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <style>body{font-family:Arial,sans-serif;margin:0;background:#fffafc;color:#2f2f2f}header{background:#ff7eb6;color:#fff;padding:1rem}main{max-width:1100px;margin:auto;padding:1rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.card{background:#fff;border:1px solid #f2d5e3;border-radius:12px;padding:1rem}.btn{background:#4a90e2;color:#fff;border:none;padding:.5rem .8rem;border-radius:8px;cursor:pointer}.top{display:flex;gap:.5rem;flex-wrap:wrap}input,select{padding:.5rem}</style>
+</head>
+<body>
+<header><h1>KidsCorner</h1><p>Attractive clothing for boys & girls (0-14 years)</p></header>
+<main>
+  <div class="top">
+    <input id="search" placeholder="Search dresses, suits, rompers..."/>
+    <button class="btn" onclick="loadProducts()">Search</button>
+    <input id="name" placeholder="Name"><input id="email" placeholder="Email"><input id="password" type="password" placeholder="Password">
+    <button class="btn" onclick="register()">Register</button><button class="btn" onclick="login()">Login</button>
+  </div>
+  <h2>Products</h2><div id="products" class="grid"></div>
+  <h2>Checkout</h2>
+  <p>Enter product ID and quantity, comma-separated e.g. <b>1:2,3:1</b></p>
+  <input id="items" placeholder="1:1"><input id="address" placeholder="Shipping address">
+  <select id="method"><option value="credit_card">Credit Card</option><option value="debit_card">Debit Card</option><option value="easypaisa">Easypaisa</option><option value="jazzcash">JazzCash</option></select>
+  <button class="btn" onclick="checkout()">Place Order</button>
+  <pre id="msg"></pre>
+</main>
+<script src="./script.js"></script>
+</body>
+</html>
